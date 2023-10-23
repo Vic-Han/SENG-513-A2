@@ -1,0 +1,107 @@
+<!--
+    Course : SENG 513 Web Based Systems
+    Date: October 23rd, 2023
+    Assignment 2
+    Name: Victor Han
+    UCID: 30112492
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Main Screen </title>
+        <link rel = "stylesheet" href = "main_screen.css">
+        <script src = "game_logic.js" defer></script>
+        <script src = "back_end.js" defer></script>
+    </head>
+    <body>
+        <div class = "main_background">
+            <div id = "game_display" class ="">
+                <div id = "top_display"> 
+                    <div class = "empty_space">
+                    </div>
+                    <div id = "player2" class = "player_view">
+                        <div>
+                            <img class = "player_image" id = "player2_image" src = "images/player_icon.jpg" alt = "cool icon">
+                            <div class="player_name" id = "player2_name"> Player 2</div>
+                        </div>
+                        <div>
+                                <div id = "player2_card_list" class = "card_container">
+                                    <img src="images/card_back.jpg" alt = "card back" class= "card" id = "player2_card1">
+                                    <img src="images/card_back.jpg" alt = "card back" class= "card" id = "player2_card2">
+                                </div>
+                                <button class = "show_cards" onclick="showCards(1)"> Show Cards</button>
+                        </div>
+                        <div id = "player2_stack" class = "stack_value">
+                            <img class = "chip_icon" src = "images/poker_chip.png" alt = "poker chip"> 1500
+                        </div>
+                    </div>
+                    <div class = "empty_space">
+                        
+                    </div>
+                </div>
+                <div id = middle_display> 
+                    <div id = "player1" class = "player_view">
+                        <div>
+                            <img class = "player_image" id = "player1_image" src = "images/player_icon.jpg" alt = "cool icon">
+                            <div class= "player_name" id = "player1_name"> Player 1</div>
+                        </div>
+                        <div >
+                            <div id = "player1_card_list" class = "card_container">
+                                <img src="images/card_back.jpg" alt = "card back" class = "card" id = "player1_card1">
+                                <img src="images/card_back.jpg" alt = "card back" class = "card" id = "player1_card2">
+                            </div>
+                            <button class = "show_cards" onclick="showCards(0)"> Show Cards</button>
+                        </div>
+                        <div id = "player1_stack" class="stack_value">
+                            <img class ="chip_icon" src = "images/poker_chip.png" alt ="poker chip"> 1500
+                        </div>
+                    </div>
+                    <div id = "board_center">
+                        <button id = "game_start_button" onclick="playRound()"> Start!!</button>
+                    </div>
+                    <div id = "player3" class = "player_view">
+                        <div>
+                            <img class = "player_image" id = "player3_image" src = "images/player_icon.jpg" alt = "cool icon">
+                            <div class="player_name" id = "player3_name"> Player 3</div>
+                        </div>
+                        <div>
+                            <div id = "player3_card_list" class = "card_container">
+                                <img src="images/card_back.jpg" class= "card" id = "player3_card1" alt = "card back">
+                                <img src="images/card_back.jpg" class= "card" id = "player3_card2" alt = "card back">
+       
+                            </div>
+                            <button class = "show_cards" onclick="showCards(2)"> Show Cards</button>
+                        </div>
+                        <div id = "player3_stack" class="stack_value">
+                            <img class ="chip_icon" src = "images/poker_chip.png" alt ="poker chip"> 1500
+                        </div>
+                    </div>
+                </div>
+                <div id = bottom_display> 
+                    <div class = "game_screen_buttons">
+                        <button id = "exit_game_button" onclick="showExitPopup()"> Exit </button>
+                    </div>
+                    <div id = "community_cards">
+
+                    </div>
+                    <div id = "card_deck">
+                        <img src = "images/card_back.jpg" class = "card deck" alt = "card deck">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id = "exit_popup" class = "popup_overlay">
+            <div class = "popup_contents">
+                <h2 class = "popup_text"> Are you sure you want to exit the game? </h2>
+                <div class = "popup_buttons">
+                   
+                    <a href="index.html" class="popup_button">Yes</a>
+                    <button onclick="hideExitPopup()" class = "popup_button">No</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
